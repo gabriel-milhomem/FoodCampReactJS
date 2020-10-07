@@ -2,6 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
-var interface = document.querySelector("#interface");
+var root = document.querySelector("#root");
 
-ReactDOM.render(<App />, interface);
+ReactDOM.render(<App />, root);

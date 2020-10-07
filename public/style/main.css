@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+strong {
+  font-weight: bold;
+}
+
 body {
   width: 100%;
   font-family: 'Roboto', sans-serif;
@@ -140,8 +144,8 @@ section .produtos {
 }
 
 article {
-  width: 143px;
-  height: 180px;
+  width: 153px;
+  height: 185px;
   background: #ffffff;
   margin-right: 15px;
   flex-shrink: 0;
@@ -153,6 +157,44 @@ article {
   justify-content: space-between;
   position: relative;
   font-size: 14px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.green-border {
+  border: 5px solid #32B72F;
+}
+
+.add {
+  color:#39d477;
+  font-size: 20px;
+  width: 22px;
+  text-align: end;
+}
+
+.minus {
+  color: #CF2B2B;
+  width: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.price {
+  align-items: center;
+}
+
+.counter {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+.show {
+  display: flex;
 }
 
 .espaco {
@@ -184,6 +226,104 @@ footer {
   border-top: 1px solid #CBCBCB;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
   z-index: 1;
+}
+
+/* FIM */
+
+/* ----------- ESTILIZAR CAIXA DE ENTRADA DE DADOS E CONFIRMAÇÃO   ------------ */
+
+.confirmar {
+  position: fixed;
+  top: calc(100vh/2 - 162.5px);
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 325px;
+  background-color: #39d477;
+  z-index: 2;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  padding: 20px;
+  display: none;
+  font-size: 18px;
+}
+
+.confirmar div {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmar h1, #total  {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.confirmar button {
+  font-weight: 700;
+  width: 100%;
+}
+
+.confirmar h3, .confirmar span, #nomeTotal {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.confirmar .certo {
+  background-color: #ffffff;
+  color: #39d477;
+  border: 3px solid lightgreen;
+}
+
+.confirmar .cancelar {
+  position: relative;
+  background-color: #39d477;
+  height: auto;
+  padding: 10px;
+  width: auto;
+}
+
+::placeholder {
+  opacity: 0.3;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.caixaTexto {
+  border: 3px solid lightgreen;
+  height: 35px;
+  flex-grow: 1;
+  padding-top: 3px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+
+.iconeFormulario {
+  right: 10px;
+  bottom: 8px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+#iconeVoltar {
+  bottom: 26.5px;
+  right: 40px;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  display: block;
+  z-index: 9;
+  cursor: pointer;
+  border: white;
 }
 
 /* FIM */
