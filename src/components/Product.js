@@ -21,7 +21,7 @@ export default function Product(props) {
     }
 
     return (
-        <article className= {articleClass} onClick= {(event) => setSelected(true)}> 
+        <article className= {articleClass} onClick= {() => setSelected(true)}> 
             <img src= {`./images/${type}/${image}`} alt= {name} />
             <h2> {name} </h2>
             <p> {text} </p>

@@ -1,10 +1,10 @@
 import React from "react";
 import Product from "./Product";
 
-export default function Section({section}) {
+export default function Section({section, title}) {
     return (
         <section>
-            <h1> </h1>
+            <h1> {title} </h1>
             <div className= "produtos">
                 {section.map(item => (
                     <Product 
@@ -16,7 +16,7 @@ export default function Section({section}) {
                     />
                 ))}
 
-                <div class= "espaco"> </div>
+                <div class= "space"> </div>
             </div>
         </section>
     );
