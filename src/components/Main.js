@@ -8,20 +8,21 @@ export default function Main(props) {
     return (
         <main>
             {allItem.map((section, i) => (
-                <section>
+                <section key= {i}>
                     <h1> {titles[i]} </h1>
 
                     <div className= "products">
-                        {section.items.map(item => (
+                        {section.items.map((item, i) => (
                             <Product 
                                 increment = {increment}
                                 decrement = {decrement}
                                 newItems = {newItems}
                                 item = {item}
+                                key= {i}
                             />
                         ))}
         
-                        <div class= "space"> </div>
+                        <div className= "space"> </div>
                     </div>
                 </section>
             ))}

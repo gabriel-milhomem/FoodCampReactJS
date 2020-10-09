@@ -10,6 +10,7 @@ export default function Product(props) {
             <img src= {`./images/${item.image}`} alt= {item.name} />
             <h2> {item.name} </h2>
             <p> {item.text} </p>
+
             <div className= "price">
                 <span> {`R$ ${(item.price).toFixed(2)}`} </span>
 

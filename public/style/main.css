@@ -1,27 +1,4 @@
-* {
-  box-sizing: border-box;
-}
 
-strong, h2, .minus, .revise h1, .revise button  {
-  font-weight: 700;
-}
-
-.ocultar {
-  display: none!important;
-}
-
-.aparecer {
-  display: block!important;
-}
-
-.interface {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-
-.interfaceSendOrder {
-  padding: 70px 0px 0px 0px;
-}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -38,6 +15,14 @@ article:hover, button:hover, .add:hover, .minus:hover {
 p {
   color: #aaaaaa;
   font-size: 12px;
+}
+
+#interface {
+  padding: 70px 0px;
+}
+
+#interface-review {
+  padding-top: 70px;
 }
 
 button {
@@ -73,4 +58,16 @@ main h1, .revise > h1, header h1 {
 
 main img, article, .data-order {
   border-radius: 10px;
+}
+
+strong, h2, .minus, .revise h1, .revise button  {
+  font-weight: 700;
+}
+
+.disabled-link {
+  pointer-events: none;
+}
+
+.interface {
+  padding: 70px 0px;
 }
