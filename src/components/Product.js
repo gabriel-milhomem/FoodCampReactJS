@@ -1,37 +1,22 @@
 import React from "react";
 
 export default function Product(props) {
-    var {type, image, name, price, text} = props;
-    var [selected, setSelected] = React.useState(false);
-    var [numItem, setNumItem] = React.useState(1);
-    var articleClass = selected ? `${type} green-border`: type;
-    var counterClass = selected ? "counter show": "counter";
-
-    function decrement(event) {
-        var num = numItem - 1;
-
-        if (num === 0) {
-            event.stopPropagation();
-            setSelected(false);
-            setNumItem(1);
-            return ;
-        }
-
-        setNumItem(num);
-    }
+    var {increment, decrement, item, newItems} = props;
+    var articleClass = (item.clicked) ? `green-border`: '';
+    var counterClass = (item.clicked) ? "counter show": "counter";
 
     return (
-        <article className= {articleClass} onClick= {() => setSelected(true)}> 
-            <img src= {`./images/${type}/${image}`} alt= {name} />
-            <h2> {name} </h2>
-            <p> {text} </p>
+        <article className= {articleClass} onClick= {() => newItems(item)}> 
+            <img src= {`./images/${item.image}`} alt= {item.name} />
+            <h2> {item.name} </h2>
+            <p> {item.text} </p>
             <div className= "price">
-                <span> {`R$ ${price}`} </span>
+                <span> {`R$ ${item.price}`} </span>
 
                 <div className= {counterClass}>
-                    <span className= "minus" onClick= {(event) => decrement(event)}> - </span>
-                    <strong> {numItem} </strong>
-                    <span className= "add" onClick= {() => setNumItem(numItem + 1)} > + </span>
+                    <span className= "minus" onClick= {(event) => decrement(event, item)}> - </span>
+                    <strong> {item.quantity} </strong>
+                    <span className= "add" onClick= {() => increment(item)} > + </span>
                 </div>
             </div>
         </article>

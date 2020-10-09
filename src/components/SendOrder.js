@@ -1,20 +1,42 @@
 import React from "react";
 
-export default function SendOrder() {
+export default function SendOrder({allItem}) {
+    var total = 0;
+    var selected = [];
+
+    allItem.forEach(section => {
+        var newArray = section.items.filter(item => item.clicked === true);
+        selected = [...newArray, ...selected];
+    });
+
+    console.log(selected);
+
     return (
         <div className= "revise">
             <h1> Revise seu pedido </h1>
 
             <div className= "data-order">
-                <div> <h3 id= "nome0"> TESTE</h3> <span id= "preco0"> 43</span> </div>
-                <div> <h3 id= "nome1"> TESTE</h3> <span id= "preco1"> 23</span> </div>
-                <div> <h3 id= "nome2"> TESTE</h3> <span id= "preco2"> 15</span> </div>
-                <div> <h1 id= "nomeTotal"> TOTAL </h1> <span id= "total"> 234</span> </div>
+                {selected.map(item => {
+
+                    //console.log(item);
+                    //console.log("NOME", item.name);
+                    //console.log("QUANTID", item.quantity)
+                    var priceItem = (parseFloat(item.price) * parseFloat(item.quantity)).toFixed(2);
+                    //console.log("Preco", item.price);
+                    total += priceItem;
+                    return (
+                        <div> 
+                            <h3> {item.name} <strong> {`(${item.quantity} un)`} </strong> </h3> 
+                            <span> {`R$ ${priceItem}`} </span> 
+                        </div>
+                    );
+                })}
+
+                <div className= "divTotal"> <h1> Total </h1> <span> {`R$ ${total}`} </span> </div>
             </div>
         
-            <button className= "certo" onclick= "pedir(true)"> Tudo certo, pode pedir! </button>
-            <button className= "cancelar" onclick= "clickCancelar()"> Cancelar </button>
-            <ion-icon onclick= "voltarTela()" id= "iconeVoltar" name="arrow-back-circle-outline"> </ion-icon>
+            <button className= "green-button"> Tudo certo, pode pedir! </button>
+            <button className= "cancel"> Cancelar </button>
         </div>
     );
 }

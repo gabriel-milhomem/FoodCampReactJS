@@ -6,10 +6,26 @@ strong, h2, .minus, .revise h1, .revise button  {
   font-weight: 700;
 }
 
+.ocultar {
+  display: none!important;
+}
+
+.aparecer {
+  display: block!important;
+}
+
+.interface {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.interfaceSendOrder {
+  padding: 70px 0px 0px 0px;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #333333;
-  padding: 70px 0px;
   font-size: 16px;
   margin: 0;
   background: #EEEEEE;
@@ -35,7 +51,7 @@ button {
   outline: none;
 }
 
-.price, .counter, .data-order div {
+.price, .show, .data-order div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,41 +74,3 @@ main h1, .revise > h1, header h1 {
 main img, article, .data-order {
   border-radius: 10px;
 }
-
-/*::placeholder {
-  opacity: 0.3;
-  font-family: 'Roboto', sans-serif;
-}
-
-.caixaTexto {
-  border: 3px solid lightgreen;
-  height: 35px;
-  flex-grow: 1;
-  padding-top: 3px;
-  padding-left: 5px;
-}
-
-.iconeFormulario {
-  right: 10px;
-  bottom: 8px;
-}
-
-form {
-  width: 100%;
-  display: flex;
-  position: relative;
-}
-
-#iconeVoltar {
-  bottom: 26.5px;
-  right: 40px;
-  color: #ffffff;
-  width: 30px;
-  height: 30px;
-  display: block;
-  z-index: 9;
-  cursor: pointer;
-  border: white;
-}
-
-FIM */

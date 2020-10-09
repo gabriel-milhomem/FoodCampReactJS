@@ -1,34 +1,42 @@
 .revise {
     height: calc(100vh - 70px);
-    padding: 40px 20px;
-  }
+    padding: 30px 20px;
+    display: none;
+}
   
-  .data-order {
-    width: 100%;
-    height: 200px;
-    margin: 20px 0px;
-    padding: 25px;
-    color: #7b7b7b;
-    background: #ffffff;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .revise button {
-    margin: 0 auto;
-  }
-  
-  .revise .certo {
-    background:#39d477;
-    color: #ffffff;
-    letter-spacing: -1px;
-  }
-  
-  .revise .cancelar {
-    width: auto;
-    color: #7b7b7b;
-    background: transparent;
-  }
-  
-  .revise > h1 {
-    font-size: 28px;
-  }
+.data-order {
+  width: 100%;
+  margin: 20px 0px;
+  padding: 25px;
+  color: #7b7b7b;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.data-order div {
+  margin-bottom: 20px;
+}
+
+.data-order .divTotal {
+  margin-bottom: 0px;
+}
+
+.revise button {
+  margin: 0 auto;
+}
+
+.green-button {
+  background:#39d477;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+.cancel {
+  width: auto;
+  color: #7b7b7b;
+  background: transparent;
+}
+
+.revise > h1 {
+  font-size: 28px;
+}
