@@ -26,7 +26,6 @@ export default function App() {
 
     function increment(itemClicked) {
         itemClicked.quantity += 1;
-        console.log(itemClicked.quantity);
     }
 
     function buttonChecked() {
@@ -51,6 +50,7 @@ export default function App() {
         setButtonActivate([...buttonActivate]);
     }
     
+    var otherPadding = false;
     function newItems(itemClicked) {
         itemClicked.clicked = true;
 
@@ -58,8 +58,15 @@ export default function App() {
         setAllItem([...allItem]);
     }
 
+    function transition() {
+        document.querySelector("main").classList.add("ocultar");
+        document.querySelector(".revise").classList.add("aparecer");
+        document.querySelector("footer").classList.add("ocultar");
+        otherPadding = true;
+    }
+
     return (
-        <div class= {buttonActivate.indexOf(false) === -1 ? "interfaceSendOrder" : "interface"}>
+        <div class= {otherPadding ? "interfaceSendOrder" : "interface"}>
             <Header />
             <Main 
                 increment = {increment}
@@ -67,7 +74,7 @@ export default function App() {
                 newItems = {newItems}
                 allItem = {allItem}
             />
-            <Footer button= {buttonActivate} />
+            <Footer button= {buttonActivate} transition= {transition}/>
             <SendOrder allItem= {allItem} />
         </div>
     );

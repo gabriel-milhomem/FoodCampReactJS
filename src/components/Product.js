@@ -11,7 +11,7 @@ export default function Product(props) {
             <h2> {item.name} </h2>
             <p> {item.text} </p>
             <div className= "price">
-                <span> {`R$ ${item.price}`} </span>
+                <span> {`R$ ${(item.price).toFixed(2)}`} </span>
 
                 <div className= {counterClass}>
                     <span className= "minus" onClick= {(event) => decrement(event, item)}> - </span>

@@ -3,13 +3,24 @@ import React from "react";
 export default function SendOrder({allItem}) {
     var total = 0;
     var selected = [];
+    var message = `Olá, gostaria de fazer o pedido:\n`;
 
     allItem.forEach(section => {
         var newArray = section.items.filter(item => item.clicked === true);
         selected = [...newArray, ...selected];
     });
 
-    console.log(selected);
+    function sendMessege() {
+        selected.forEach(item => {
+            var priceItem = (item.price * item.quantity).toFixed(2);
+            message += `${item.name} (${item.quantity} un) -> R$ ${priceItem} !\n`;
+            total = total + parseFloat(priceItem);
+        });
+        message += `Total -> R$ ${total.toFixed(2)} !`;
+        console.log(message);
+        message = encodeURIComponent(message);
+        window.open("https://api.whatsapp.com/send?phone=5562984224182&text=" + message, "_blank");
+    }
 
     return (
         <div className= "revise">
@@ -17,13 +28,8 @@ export default function SendOrder({allItem}) {
 
             <div className= "data-order">
                 {selected.map(item => {
-
-                    //console.log(item);
-                    //console.log("NOME", item.name);
-                    //console.log("QUANTID", item.quantity)
-                    var priceItem = (parseFloat(item.price) * parseFloat(item.quantity)).toFixed(2);
-                    //console.log("Preco", item.price);
-                    total += priceItem;
+                    var priceItem = (item.price * item.quantity).toFixed(2);
+                    total = total + parseFloat(priceItem);
                     return (
                         <div> 
                             <h3> {item.name} <strong> {`(${item.quantity} un)`} </strong> </h3> 
@@ -32,10 +38,10 @@ export default function SendOrder({allItem}) {
                     );
                 })}
 
-                <div className= "divTotal"> <h1> Total </h1> <span> {`R$ ${total}`} </span> </div>
+                <div className= "divTotal"> <h1> Total </h1> <span> {`R$ ${(total).toFixed(2)}`} </span> </div>
             </div>
         
-            <button className= "green-button"> Tudo certo, pode pedir! </button>
+            <button onClick = {sendMessege} className= "green-button"> Tudo certo, pode pedir! </button>
             <button className= "cancel"> Cancelar </button>
         </div>
     );

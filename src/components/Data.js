@@ -2,7 +2,7 @@ import React from "react";
 
 export default function getDataSet() {
     var dataSet = [{
-        type: "comidas",
+        type: "prato",
     
         items: [{
             image: "comida01.jpg",
@@ -35,7 +35,7 @@ export default function getDataSet() {
             clicked: false
         }]}, {
         
-        type: "bebidas",
+        type: "bebida",
     
         items: [{
             image: "bebida01.jpg",
@@ -68,7 +68,7 @@ export default function getDataSet() {
             clicked: false
         }]}, {
     
-        type: "sobremesas",
+        type: "sobremesa",
     
         items: [{
             image: "sobremesa01.jpg",
