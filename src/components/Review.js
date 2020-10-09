@@ -24,7 +24,7 @@ export default function Review(props) {
 
         message += `*- Total* --------> *R$ ${total.toFixed(2).replaceAll('.', ',')}* !\n`;
         message += "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-";
-        console.log(message);
+
         message = encodeURIComponent(message);
         window.open("https://api.whatsapp.com/send?phone=5562984224182&text=" + message, "_blank");
     }
@@ -45,12 +45,15 @@ export default function Review(props) {
                     return (
                         <div key= {i}> 
                             <h3> {item.name} <strong> {`(${item.quantity} un)`} </strong> </h3> 
-                            <span> {`R$ ${priceItem}`} </span> 
+                            <span> <strong> {`R$ ${priceItem}`} </strong> </span>
                         </div>
                     );
                 })}
 
-                <div className= "divTotal"> <h1> Total </h1> <span> {`R$ ${(total).toFixed(2)}`} </span> </div>
+                <div className= "divTotal"> 
+                    <h1> Total </h1>
+                    <span> <strong> {`R$ ${(total).toFixed(2)}`} </strong> </span>
+                </div>
             </div>
         
             <button onClick = {sendMessage} className= "green-button"> Tudo certo, pode pedir! </button>

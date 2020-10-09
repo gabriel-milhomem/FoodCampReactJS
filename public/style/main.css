@@ -60,7 +60,7 @@ main img, article, .data-order {
   border-radius: 10px;
 }
 
-strong, h2, .minus, .revise h1, .revise button  {
+h2, .minus, .revise h1, .revise button  {
   font-weight: 700;
 }
 
